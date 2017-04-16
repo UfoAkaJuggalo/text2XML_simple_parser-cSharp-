@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace text2XML.Models
 {
-    class Phrase
+    public abstract class Phrase
     {
+        protected string _typeOfPhrase;
+        public string parsedText { get; set; }
     }
 }

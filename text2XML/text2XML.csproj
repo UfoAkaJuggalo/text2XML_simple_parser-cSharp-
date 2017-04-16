@@ -74,12 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Lexicon.cs" />
-    <Compile Include="Models\LexiconPhrase.cs" />
-    <Compile Include="Models\Parser.cs" />
+    <Compile Include="Entities\LexiconPhrase.cs" />
     <Compile Include="Models\Phrase.cs" />
-    <Compile Include="Models\PphraseRoot.cs" />
-    <Compile Include="Models\PphraseSentence.cs" />
-    <Compile Include="Models\PphraseWord.cs" />
+    <Compile Include="Models\PhraseRoot.cs" />
+    <Compile Include="Models\PhraseSentence.cs" />
+    <Compile Include="Models\PhraseWord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

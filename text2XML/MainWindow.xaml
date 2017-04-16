@@ -13,6 +13,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="CommandBinding_Open"/>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="CommandBinding_Save"/>
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -36,18 +37,18 @@
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Margin="10,0" Padding="5" Command="ApplicationCommands.Open">Open Plain Text</Button>
-            <Button Margin="10,0" Padding="5">Parse text to XML</Button>
-            <Button Margin="10,0" Padding="5">Save XML</Button>
+            <Button Margin="10,0" Padding="5" Click="Button_Parse">Parse text to XML</Button>
+            <Button Margin="10,0" Padding="5" Command="ApplicationCommands.Save">Save XML</Button>
         </StackPanel>
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Open Text File" Command="ApplicationCommands.Open"/>
-                    <MenuItem Header="_Save XML File"/>
+                    <MenuItem Header="_Save XML File" Command="ApplicationCommands.Save"/>
                     <Separator/>
                     <MenuItem Header="_Exit" Command="ApplicationCommands.Close"/>
                 </MenuItem>
-                <MenuItem Header="_Parse text to XML"/>
+                <MenuItem Header="_Parse text to XML" Click="Button_Parse"/>
                 <MenuItem Header="_About"/>
             </Menu>
         </DockPanel>
