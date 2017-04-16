@@ -11,3 +11,7 @@ D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2
 D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\obj\Debug\text2XML.csproj.GenerateResource.Cache
 D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\obj\Debug\text2XML.exe
 D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\obj\Debug\text2XML.pdb
+D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\obj\Debug\text2XML.csprojResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\bin\Debug\Dictionary\XML_dictionary.json
+D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\bin\Debug\Newtonsoft.Json.dll
+D:\My Documents\Visual Studio 2017\Projects\text2XML_simple_parser-cSharp-\text2XML\bin\Debug\Newtonsoft.Json.xml

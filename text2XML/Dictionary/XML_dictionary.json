@@ -1,0 +1,23 @@
+﻿[
+  {
+    "type": "root",
+    "openTag": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<text>\n",
+    "closeTag": "</text>",
+    "tab": "0",
+    "canGetAttribute": "false"
+  },
+  {
+    "type": "sentence",
+    "openTag": "<sentence>\n",
+    "closeTag": "</sentence>\n",
+    "tab": "1",
+    "canGetAttribute": "true"
+  },
+  {
+    "type": "word",
+    "openTag": "<word>",
+    "closeTag": "</word>\n",
+    "tab": "2",
+    "canGetAttribute": "true"
+  }
+]
