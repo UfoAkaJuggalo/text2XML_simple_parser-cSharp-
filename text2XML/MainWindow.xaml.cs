@@ -45,6 +45,10 @@ namespace text2XML
         {
             if (txtBoxXML.Text == "")
                 Button_Parse(sender, e);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML files (*.xml)|*.xml";
+            if (saveFileDialog.ShowDialog() == true)
+                File.WriteAllText(saveFileDialog.FileName, _parser.parser.parsedText);
         }
 
         private void CommandBinding_Exit(object sender, ExecutedRoutedEventArgs e)
@@ -54,13 +58,9 @@ namespace text2XML
 
         private void Button_Parse(object sender, RoutedEventArgs e)
         {
+            _parser.sourceText = txtBoxSource.Text;
             _parser.parser.parsedText = _parser.sourceText;
             txtBoxXML.Text = _parser.parser.parsedText;
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "XML files (*.xml)|*.xml";
-            if (saveFileDialog.ShowDialog() == true)
-                File.WriteAllText(saveFileDialog.FileName, _parser.parser.parsedText);
-
-        }
+                    }
     }
 }
