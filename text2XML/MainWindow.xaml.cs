@@ -24,13 +24,16 @@ namespace text2XML
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ParserViewModel _parser = new ParserViewModel();
+        private ParserViewModel _parser;
 
         public MainWindow()
         {
             InitializeComponent();
+            _parser = new ParserViewModel();
             Lexicon.LoadLexicon("Dictionary\\XML_dictionary.json");
-            txtBoxSource.Text = _parser.sourceText;
+            DataContext = _parser;
+            if (_parser.CloseAction == null)
+                _parser.CloseAction = new Action(() => Close());
         }
 
         private void CommandBinding_Open(object sender, ExecutedRoutedEventArgs e)
@@ -49,11 +52,6 @@ namespace text2XML
             saveFileDialog.Filter = "XML files (*.xml)|*.xml";
             if (saveFileDialog.ShowDialog() == true)
                 File.WriteAllText(saveFileDialog.FileName, _parser.parser.parsedText);
-        }
-
-        private void CommandBinding_Exit(object sender, ExecutedRoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void Button_Parse(object sender, RoutedEventArgs e)

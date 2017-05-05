@@ -10,11 +10,6 @@
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
-    <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Open" Executed="CommandBinding_Open"/>
-        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Exit"/>
-        <CommandBinding Command="ApplicationCommands.Save" Executed="CommandBinding_Save"/>
-    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -32,7 +27,7 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right" Margin="0,10,0,0" FontSize="14" FontWeight="Bold">Source Text</Label>
             <Label Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Right" FontSize="14" FontWeight="Bold" Margin="0,10,25,0">XML</Label>
-            <TextBox x:Name="txtBoxSource" Grid.Column="0" Grid.Row="1" AcceptsTab="True" AcceptsReturn="True" Margin="25,10,10,10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+            <TextBox x:Name="txtBoxSource" Grid.Column="0" Grid.Row="1" AcceptsTab="True" AcceptsReturn="True" Margin="25,10,10,10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="{Binding sourceText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             <TextBox x:Name="txtBoxXML" Grid.Column="1" Grid.Row="1" AcceptsTab="True" AcceptsReturn="True" Margin="10,10,25,10" IsReadOnly="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -46,7 +41,7 @@
                     <MenuItem Header="_Open Text File" Command="ApplicationCommands.Open"/>
                     <MenuItem Header="_Save XML File" Command="ApplicationCommands.Save"/>
                     <Separator/>
-                    <MenuItem Header="_Exit" Command="ApplicationCommands.Close"/>
+                    <MenuItem Header="_Exit" Command="{Binding ExitCommand}"/>
                 </MenuItem>
                 <MenuItem Header="_Parse text to XML" Click="Button_Parse"/>
                 <MenuItem Header="_About"/>
