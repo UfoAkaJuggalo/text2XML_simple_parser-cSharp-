@@ -35,30 +35,5 @@ namespace text2XML
             if (_parser.CloseAction == null)
                 _parser.CloseAction = new Action(() => Close());
         }
-
-        private void CommandBinding_Open(object sender, ExecutedRoutedEventArgs e)
-        {
-            OpenFileDialog txtFile = new OpenFileDialog();
-            txtFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (txtFile.ShowDialog() == true)
-                txtBoxSource.Text = _parser.sourceText = File.ReadAllText(txtFile.FileName);
-        }
-
-        private void CommandBinding_Save(object sender, ExecutedRoutedEventArgs e)
-        {
-            if (txtBoxXML.Text == "")
-                Button_Parse(sender, e);
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "XML files (*.xml)|*.xml";
-            if (saveFileDialog.ShowDialog() == true)
-                File.WriteAllText(saveFileDialog.FileName, _parser.parser.parsedText);
-        }
-
-        private void Button_Parse(object sender, RoutedEventArgs e)
-        {
-            _parser.sourceText = txtBoxSource.Text;
-            _parser.parser.parsedText = _parser.sourceText;
-            txtBoxXML.Text = _parser.parser.parsedText;
-                    }
     }
 }
