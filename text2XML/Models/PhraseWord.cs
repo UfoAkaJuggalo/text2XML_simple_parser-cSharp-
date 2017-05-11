@@ -14,7 +14,7 @@ namespace text2XML.Models
             get
             {
                 string result = "";
-                for (int i=0; i<Lexicon.GetTab(_typeOfPhrase);i++)
+                for (int i=0; i< Lexicon.GetLevel(_typeOfPhrase);i++)
                 {
                     result += "\t";
                 }

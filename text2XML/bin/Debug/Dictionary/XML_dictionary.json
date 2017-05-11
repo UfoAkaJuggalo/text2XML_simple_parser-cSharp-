@@ -1,23 +1,135 @@
-﻿[
-  {
-    "type": "root",
-    "openTag": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<text>\n",
-    "closeTag": "</text>",
-    "tab": "0",
-    "canGetAttribute": "false"
-  },
-  {
-    "type": "sentence",
-    "openTag": "<sentence>\n",
-    "closeTag": "</sentence>\n",
-    "tab": "1",
-    "canGetAttribute": "true"
-  },
-  {
-    "type": "word",
-    "openTag": "<word>",
-    "closeTag": "</word>\n",
-    "tab": "2",
-    "canGetAttribute": "true"
-  }
-]
+﻿{
+  "type": "xml",
+  "dictionary": [
+    {
+      "name": "root",
+      "openTag": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<text>\n",
+      "closeTag": "</text>",
+      "level": "0",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "false"
+    },
+    {
+      "name": "paragraph",
+      "openTag": "<paragraph>\n",
+      "closeTag": "</paragraph>\n",
+      "level": "1",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "sentence",
+      "openTag": "<sentence>\n",
+      "closeTag": "</sentence>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "question",
+      "openTag": "<question>\n",
+      "closeTag": "</question>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "exclamation",
+      "openTag": "<exclamation>\n",
+      "closeTag": "</exclamation>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "quote",
+      "openTag": "<quote>\n",
+      "closeTag": "</quote>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "true",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "bracket",
+      "openTag": "<bracket>\n",
+      "closeTag": "</bracket>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "true",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "brace",
+      "openTag": "<brace>\n",
+      "closeTag": "</brace>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "true",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "square",
+      "openTag": "<square>\n",
+      "closeTag": "</square>\n",
+      "level": "2",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "true",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "word",
+      "openTag": "<word>\n",
+      "closeTag": "</word>\n",
+      "level": "3",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "number",
+      "openTag": "<number>\n",
+      "closeTag": "</number>\n",
+      "level": "3",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "hash",
+      "openTag": "<hash>\n",
+      "closeTag": "</hash>\n",
+      "level": "3",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    },
+    {
+      "name": "tag",
+      "openTag": "<tag>\n",
+      "closeTag": "</tag>\n",
+      "level": "3",
+      "startString": "",
+      "stopString": "",
+      "multiLevel": "false",
+      "canGetAttribute": "true"
+    }
+  ]
+}

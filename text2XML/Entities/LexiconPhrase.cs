@@ -8,9 +8,13 @@ namespace text2XML.Models
 {
     public class LexiconPhrase
     {
+        public string name;
         public string openTag;
         public string closeTag;
-        public int tab;
+        public int level;
+        public string startString;
+        public string stopString;
+        public bool multiLevel;
         public bool canGetAttribute;
     }
 }

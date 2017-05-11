@@ -15,7 +15,7 @@ namespace text2XML.Models
             {
                 string result;
                 string tab = "";
-                for (int i = 0; i < Lexicon.GetTab(_typeOfPhrase); i++)
+                for (int i = 0; i < Lexicon.GetLevel(_typeOfPhrase); i++)
                 {
                     tab += "\t";
                 }

@@ -9,23 +9,53 @@ namespace text2XML.Models
 {
     public static class Lexicon
     {
-        private static Dictionary<string, LexiconPhrase> _lexicon = new Dictionary<string, LexiconPhrase>();
+        private static string _type;
+        private static List<LexiconPhrase> _lexicon = new List<LexiconPhrase>();
 
-        public static string GetTagIn(string elementType)
+        public static string type { get => _type; set => _type = value; }
+
+
+        public static string GetStartString(string elementName)
         {
-            return _lexicon[elementType].openTag;
+            return _lexicon
+                .Find(x=>x.name==elementName)
+                .startString;
         }
-        public static string GetTagOut(string elementType)
+        public static string GetStopString(string elementName)
         {
-            return _lexicon[elementType].closeTag;
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .stopString;
         }
-        public static int GetTab(string elementType)
+        public static bool GetMultiLevel(string elementName)
         {
-            return _lexicon[elementType].tab;
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .multiLevel;
         }
-        public static bool GetHasAtrr(string elementType)
+        public static string GetTagIn(string elementName)
         {
-            return _lexicon[elementType].canGetAttribute;
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .openTag;
+        }
+        public static string GetTagOut(string elementName)
+        {
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .closeTag;
+        }
+        public static int GetLevel(string elementName)
+        {
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .level;
+        }
+        public static bool GetHasAtrr(string elementName)
+        {
+            return _lexicon
+                .Find(x => x.name == elementName)
+                .canGetAttribute;
         }
         public static void LoadLexicon(string dictPath)
         {
@@ -34,17 +64,21 @@ namespace text2XML.Models
             {
                 string json = r.ReadToEnd();
                 dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                foreach (var i in result)
+                _type = result.type;
+                foreach (var i in result.dictionary)
                 {
-                    string type = i.type;
                     LexiconPhrase val = new LexiconPhrase
                     {
+                        name = i.name,
                         openTag = i.openTag,
                         closeTag = i.closeTag,
-                        tab = i.tab,
+                        level = i.level,
+                        startString = i.startString,
+                        stopString = i.stopString,
+                        multiLevel = i.multiLevel,
                         canGetAttribute = i.canGetAttribute
                     };
-                    _lexicon.Add(type, val);
+                    _lexicon.Add(val);
                 }
             }
         }
